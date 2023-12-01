@@ -48,6 +48,7 @@ flyway {
     password = ""
     locations = arrayOf("filesystem:$buildDir/generated/migrations")
     baselineOnMigrate = true
+    baselineVersion = "0"
 }
 
 
