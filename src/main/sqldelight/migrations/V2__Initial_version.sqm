@@ -1,0 +1,30 @@
+-- example sequence
+CREATE SEQUENCE customer_customer_id_seq AS BIGINT
+    INCREMENT BY 1
+    START WITH 1
+    CACHE 1;
+
+CREATE TABLE Customer (
+    customer_id BIGINT DEFAULT (nextval('customer_customer_id_seq')), -- note parens around nextval
+    first_name TEXT NOT NULL,
+    last_name TEXT NOT NULL,
+    email TEXT,
+    address_id INTEGER NOT NULL,
+    active_bool BOOLEAN DEFAULT TRUE NOT NULL,
+    create_date DATE DEFAULT CURRENT_DATE NOT NULL,
+    last_update TIMESTAMP WITH TIME ZONE DEFAULT now(),
+    active INTEGER
+);
+-- example add constraint
+ALTER TABLE Customer ADD CONSTRAINT customer_pk PRIMARY KEY (customer_id);
+
+CREATE TABLE Address (
+    address_id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY, -- example identity
+    address TEXT NOT NULL,
+    address2 TEXT,
+    district TEXT NOT NULL,
+    city_id INTEGER NOT NULL,
+    postal_code TEXT,
+    phone text NOT NULL,
+    last_update TIMESTAMP WITH TIME ZONE DEFAULT now() NOT NULL
+);
