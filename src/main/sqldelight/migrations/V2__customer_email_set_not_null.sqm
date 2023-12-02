@@ -1,0 +1,2 @@
+-- example set not null
+ALTER TABLE Customer ALTER COLUMN email SET NOT NULL;

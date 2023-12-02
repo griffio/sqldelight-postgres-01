@@ -1,0 +1,2 @@
+-- example drop column
+ALTER TABLE Customer DROP COLUMN active;

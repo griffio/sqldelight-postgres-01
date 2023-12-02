@@ -1,0 +1,16 @@
+insert:
+INSERT INTO Customer (first_name, last_name, email, address_id, active_bool) VALUES (?, ?, ?, ?, ?)
+RETURNING address_id;
+
+all:
+SELECT *
+FROM Customer;
+
+get:
+SELECT *
+FROM Customer WHERE customer_id = ?;
+
+update:
+UPDATE Customer
+SET first_name = ?, last_name = ?, email = ?, address_id = ?, active_bool = ?
+WHERE customer_id = ?;
