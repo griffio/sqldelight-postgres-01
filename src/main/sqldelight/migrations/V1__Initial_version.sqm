@@ -1,3 +1,19 @@
+CREATE TABLE City (
+   city_id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+   city_name TEXT NOT NULL UNIQUE
+);
+
+CREATE TABLE Address (
+    address_id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY, -- example identity
+    address TEXT NOT NULL,
+    address2 TEXT,
+    district TEXT NOT NULL,
+    city_id BIGINT NOT NULL REFERENCES City(city_id), -- table name is case sensitive City
+    postal_code TEXT,
+    phone text NOT NULL,
+    last_update TIMESTAMP WITH TIME ZONE DEFAULT now() NOT NULL
+);
+
 -- example sequence
 CREATE SEQUENCE customer_customer_id_seq AS BIGINT
     INCREMENT BY 1
@@ -15,19 +31,9 @@ CREATE TABLE Customer (
     last_update TIMESTAMP WITH TIME ZONE DEFAULT now(),
     active INTEGER
 );
--- example add constraint pk doesn't change table interface field to nullable
+-- issue where add constraint pk doesn't change table interface field to nullable
 -- ALTER TABLE Customer ADD CONSTRAINT customer_pk PRIMARY KEY (customer_id);
 
-CREATE TABLE Address (
-    address_id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY, -- example identity
-    address TEXT NOT NULL,
-    address2 TEXT,
-    district TEXT NOT NULL,
-    city_id INTEGER NOT NULL,
-    postal_code TEXT,
-    phone text NOT NULL,
-    last_update TIMESTAMP WITH TIME ZONE DEFAULT now() NOT NULL
-);
-
---ALTER TABLE Customer -- doesn't compile
---    ADD CONSTRAINT fk_customer_address_id FOREIGN KEY (address_id) REFERENCES Address (address_id);
+-- example add constraint foreign key
+ALTER TABLE Customer
+    ADD CONSTRAINT fk_customer_address_id FOREIGN KEY (address_id) REFERENCES Address (address_id);

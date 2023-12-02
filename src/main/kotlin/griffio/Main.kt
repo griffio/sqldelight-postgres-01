@@ -17,7 +17,8 @@ private fun getSqlDriver(): SqlDriver {
 fun main(args: Array<String>) {
     val driver = getSqlDriver()
     val sample = Sample(driver)
-    val addressId = sample.addressQueries.insert("Address 1", "Address 2", "District 31", 987, "513-281-4700", "POST CODE").executeAsOne()
+    val cityId = sample.cityQueries.insert("City Name 1").executeAsOne()
+    val addressId = sample.addressQueries.insert("Address 1", "Address 2", "District 31", cityId, "513-281-4700", "POST CODE").executeAsOne()
     val customerId = sample.customerQueries.insert("First Name", "Last Name", "test@example.com", addressId, true).executeAsOne()
     val address: Address = sample.addressQueries.get(addressId).executeAsOne()
     val customer: Customer = sample.customerQueries.get(customerId).executeAsOne()
