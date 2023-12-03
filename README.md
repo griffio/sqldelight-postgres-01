@@ -17,6 +17,9 @@ To find bugs/issues that need to be fixed/implemented
 not supported
 * alter/drop sequence
 * alter table ... add constraint primary key ... (doesn't update data class property to non-nullable type)
+bugs
+* data class `import` missing in generated queries source when using star `INSERT INTO City (city_name) VALUES (?) RETURNING *;`
+
 ----
 
 ```shell
