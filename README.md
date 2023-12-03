@@ -5,6 +5,8 @@ https://github.com/cashapp/sqldelight
 Some examples of newer postgresql support in sqldelight 2.1.x
 
 Migrations performed
+* create sequence
+* add constraint foreign key
 * set not null
 * drop not null
 * drop column
@@ -12,6 +14,9 @@ Migrations performed
 
 To find bugs/issues that need to be fixed/implemented
 
+not supported
+* alter/drop sequence
+* alter table ... add constraint primary key ... (doesn't update data class property to non-nullable type)
 ----
 
 ```shell

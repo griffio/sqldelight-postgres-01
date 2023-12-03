@@ -32,7 +32,7 @@ CREATE TABLE Customer (
     last_update TIMESTAMP WITH TIME ZONE DEFAULT now(),
     active INTEGER
 );
--- issue where add constraint pk doesn't change table interface field to nullable
+-- issue where add constraint pk doesn't change table interface field to not null (primary keys have implicit unique/not null constraints)
 -- ALTER TABLE Customer ADD CONSTRAINT customer_pk PRIMARY KEY (customer_id);
 
 -- example add constraint foreign key
