@@ -2,7 +2,7 @@
 
 https://github.com/cashapp/sqldelight
 
-Some examples of newer postgresql support in sqldelight 2.1.x
+Some examples of newer postgresql support in sqldelight SNAPSHOT builds 2.1.x
 
 Migrations performed
 * create sequence
