@@ -19,6 +19,7 @@ not supported
 * alter table ... add constraint primary key ... (doesn't update data class property to non-nullable type)
 bugs
 * data class `import` missing in generated queries source when using star `INSERT INTO City (city_name) VALUES (?) RETURNING *;`
+  * https://github.com/cashapp/sqldelight/issues/4448
 
 ----
 
