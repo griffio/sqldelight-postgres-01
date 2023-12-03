@@ -29,7 +29,7 @@ fun main(args: Array<String>) {
         city_id = address.city_id, phone = address.phone, postal_code = address.postal_code)
 
     sample.customerQueries.update(customer_id = customer.customer_id, first_name = "First Name Updated", last_name = customer.last_name,
-        email = customer.email, address_id = customer.address_id, active_bool = customer.active_bool)
+        email = customer.email, address_id = customer.address_id, is_active = customer.is_active)
 
     val addressList: List<Address> = sample.addressQueries.all().executeAsList()
     val customerList: List<Customer> = sample.customerQueries.all().executeAsList()
