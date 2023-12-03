@@ -11,7 +11,7 @@ CREATE TABLE Address (
     city_id BIGINT NOT NULL REFERENCES City(city_id), -- table name is case sensitive City
     postal_code TEXT,
     phone text NOT NULL,
-    last_update TIMESTAMP WITH TIME ZONE DEFAULT now() NOT NULL,
+    last_update TIMESTAMP WITH TIME ZONE DEFAULT now() NOT NULL
     -- can also use FOREIGN KEY (city_id) REFERENCES City(city_id)
 );
 

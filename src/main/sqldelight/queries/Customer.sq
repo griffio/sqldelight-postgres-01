@@ -1,5 +1,5 @@
 insert:
-INSERT INTO Customer (first_name, last_name, email, address_id, active_bool) VALUES (?, ?, ?, ?, ?)
+INSERT INTO Customer (first_name, last_name, email, address_id, is_active) VALUES (?, ?, ?, ?, ?)
 RETURNING address_id;
 
 all:
@@ -12,5 +12,5 @@ FROM Customer WHERE customer_id = ?;
 
 update:
 UPDATE Customer
-SET first_name = ?, last_name = ?, email = ?, address_id = ?, active_bool = ?
+SET first_name = ?, last_name = ?, email = ?, address_id = ?, is_active = ?
 WHERE customer_id = ?;

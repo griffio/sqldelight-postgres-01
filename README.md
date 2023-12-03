@@ -4,6 +4,12 @@ https://github.com/cashapp/sqldelight
 
 Some examples of newer postgresql support in sqldelight 2.1.x
 
+Migrations performed
+* set not null
+* drop not null
+* drop column
+* rename column
+
 To find bugs/issues that need to be fixed/implemented
 
 ----

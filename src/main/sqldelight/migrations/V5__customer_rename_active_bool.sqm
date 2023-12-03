@@ -1,0 +1,2 @@
+-- example rename column
+ALTER TABLE Customer RENAME COLUMN active_bool TO is_active;
