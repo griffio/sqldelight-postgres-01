@@ -15,17 +15,13 @@ Some examples of newer postgresql support in sqldelight SNAPSHOT builds 2.1.x
 To find bugs/issues that need to be fixed/implemented
 
 *Issues*
-* rename column - error with validation
-```(Cause: class app.cash.sqldelight.dialects.postgresql.grammar.psi.impl.PostgreSqlAlterTableRenameColumnImpl
-cannot be cast to class com.alecstrong.sql.psi.core.psi.mixins.ColumnDefMixin 
-(app.cash.sqldelight.dialects.postgresql.grammar.psi.impl.PostgreSqlAlterTableRenameColumnImpl
- and com.alecstrong.sql.psi.core.psi.mixins.ColumnDefMixin are in unnamed module
-  of loader org.gradle.internal.classloader.VisitableURLClassLoader )
-  ```
+* rename column - error with validation https://github.com/cashapp/sqldelight/pull/4880
+
 *Not supported*
 * alter/drop sequence
 * alter table ... add constraint primary key ... (doesn't update data class property to non-nullable type)
-bugs
+
+*Bugs*
 * data class `import` missing in generated queries source when using star `INSERT INTO City (city_name) VALUES (?) RETURNING *;`
   * https://github.com/cashapp/sqldelight/issues/4448
 
