@@ -11,6 +11,8 @@ Some examples of newer postgresql support in sqldelight SNAPSHOT builds 2.1.x
 * drop not null
 * drop column
 * rename column - must manually rename column in queries
+* rename table
+* add check constraint
 
 To find bugs/issues that need to be fixed/implemented
 
@@ -20,6 +22,7 @@ To find bugs/issues that need to be fixed/implemented
 *Not supported*
 * alter/drop sequence
 * alter table ... add constraint primary key ... (doesn't update data class property to non-nullable type)
+* add constraint check, foreign key `valid` and `not valid` clauses
 
 *Bugs*
 * data class `import` missing in generated queries source when using star `INSERT INTO City (city_name) VALUES (?) RETURNING *;`
