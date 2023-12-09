@@ -2,9 +2,10 @@ package griffio
 
 import app.cash.sqldelight.db.SqlDriver
 import app.cash.sqldelight.driver.jdbc.asJdbcDriver
+import griffio.migrations.Address
+import griffio.migrations.Customer
 import griffio.queries.Sample
-import migrations.Address
-import migrations.Customer
+
 import org.postgresql.ds.PGSimpleDataSource
 
 private fun getSqlDriver(): SqlDriver {
@@ -14,18 +15,19 @@ private fun getSqlDriver(): SqlDriver {
     return datasource.asJdbcDriver()
 }
 
-fun main(args: Array<String>) {
+fun main() {
+
     val driver = getSqlDriver()
     val sample = Sample(driver)
-    val cityId = sample.cityQueries.insert("City Name 1").executeAsOne()
-    val addressId = sample.addressQueries.insert("Address 1", "Address 2", "District 31", cityId, "513-281-4700", "POST CODE").executeAsOne()
+    val city = sample.cityQueries.insert("City Name 1").executeAsOne()
+    val addressId = sample.addressQueries.insert("Address 1", "Address 2", "District 31", city.city_id, "513-281-4700", "POST CODE").executeAsOne()
     val customerId = sample.customerQueries.insert("First Name", "Last Name", "test@example.com", addressId, true).executeAsOne()
     val address: Address = sample.addressQueries.get(addressId).executeAsOne()
     val customer: Customer = sample.customerQueries.get(customerId).executeAsOne()
 
     // update by single address object not supported, have to provide fields
     sample.addressQueries.update(address_id = address.address_id,
-        address = "Address Updated", address2 = address.address2, district = address.district,
+        address_1 = "Address Updated", address2 = address.address2, district = address.district,
         city_id = address.city_id, phone = address.phone, postal_code = address.postal_code)
 
     sample.customerQueries.update(customer_id = customer.customer_id, first_name = "First Name Updated", last_name = customer.last_name,

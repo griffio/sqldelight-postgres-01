@@ -1,3 +1,0 @@
-insert:
-INSERT INTO City (city_name) VALUES (?)
-RETURNING city_id;

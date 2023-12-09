@@ -1,0 +1,5 @@
+-- example rename table and then followed by additional migrations
+ALTER TABLE Distributor RENAME TO Supplier;
+ALTER TABLE Supplier RENAME COLUMN distributor_id TO supplier_id;
+ALTER TABLE Supplier ADD CONSTRAINT postal_code_check CHECK (char_length(postal_code) = 6);
+ALTER TABLE Supplier ADD CONSTRAINT supplier_id_postal_code_key UNIQUE (supplier_id, postal_code);

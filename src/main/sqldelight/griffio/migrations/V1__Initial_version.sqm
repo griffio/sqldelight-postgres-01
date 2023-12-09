@@ -36,5 +36,11 @@ CREATE TABLE Customer (
 -- ALTER TABLE Customer ADD CONSTRAINT customer_pk PRIMARY KEY (customer_id);
 
 -- example add constraint foreign key
+-- not supported NOT VALID clause and VALIDATE CONSTRAINT clause
 ALTER TABLE Customer
     ADD CONSTRAINT fk_customer_address_id FOREIGN KEY (address_id) REFERENCES Address (address_id);
+
+CREATE TABLE Distributor (
+    distributor_id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY, -- example identity
+    postal_code TEXT NOT NULL
+);

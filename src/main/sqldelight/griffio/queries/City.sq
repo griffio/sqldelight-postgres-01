@@ -1,0 +1,16 @@
+insert:
+INSERT INTO City (city_name) VALUES (?)
+RETURNING *;
+
+all:
+SELECT *
+FROM City;
+
+get:
+SELECT *
+FROM City WHERE city_id = ?;
+
+update:
+UPDATE City
+SET city_name = ? WHERE city_id = ?;
+

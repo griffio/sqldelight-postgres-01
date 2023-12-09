@@ -1,0 +1,2 @@
+-- example rename column
+ALTER TABLE Address RENAME COLUMN address TO address_1;
