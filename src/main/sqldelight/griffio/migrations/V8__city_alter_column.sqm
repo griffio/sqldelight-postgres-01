@@ -1,0 +1,2 @@
+-- example of alter column identity
+ALTER TABLE City ALTER COLUMN city_id DROP IDENTITY;

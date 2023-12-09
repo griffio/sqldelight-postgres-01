@@ -13,11 +13,14 @@ Some examples of newer postgresql support in sqldelight SNAPSHOT builds 2.1.x
 * rename column - must manually rename column in queries
 * rename table
 * add check constraint
+* drop identity - issue if column was renamed previously
 
 To find bugs/issues that need to be fixed/implemented
 
 *Issues*
 * rename column - error with validation https://github.com/cashapp/sqldelight/pull/4880
+* alter table ... alter column ... drop identity - support but need fixing refers to old column if column was renamed
+
 
 *Not supported*
 * alter/drop sequence
