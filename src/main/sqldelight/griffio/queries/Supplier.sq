@@ -1,0 +1,7 @@
+select:
+SELECT *
+FROM Supplier
+WHERE supplier_id = ?;
+
+insert:
+INSERT INTO Supplier VALUES ? RETURNING *;
