@@ -18,7 +18,8 @@ Some examples of newer postgresql support in sqldelight SNAPSHOT builds 2.1.x
 To find bugs/issues that need to be fixed/implemented
 
 *Issues*
-* rename column - error with validation https://github.com/cashapp/sqldelight/pull/4880
+* rename column - error with validation
+  * AWAIT MERGE https://github.com/cashapp/sqldelight/pull/4880
 * alter table ... alter column ... drop identity - support but need fixing refers to old column if column was renamed
 
 
@@ -29,7 +30,7 @@ To find bugs/issues that need to be fixed/implemented
 
 *Bugs*
 * data class `import` missing in generated queries source when using star `INSERT INTO City (city_name) VALUES (?) RETURNING *;`
-  * https://github.com/cashapp/sqldelight/issues/4448
+  * FIXED https://github.com/cashapp/sqldelight/issues/4448
 
 ----
 
