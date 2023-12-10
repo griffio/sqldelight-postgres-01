@@ -9,6 +9,7 @@ import griffio.migrations.Supplier
 import griffio.queries.Sample
 
 import org.postgresql.ds.PGSimpleDataSource
+import java.time.OffsetDateTime
 
 private fun getSqlDriver(): SqlDriver {
     val datasource = PGSimpleDataSource()
@@ -32,7 +33,7 @@ fun main() {
     val customerId = sample.customerQueries.insert("First Name", "Last Name", "test@example.com", addressId, true).executeAsOne()
     val address: Address = sample.addressQueries.get(addressId).executeAsOne()
     val customer: Customer = sample.customerQueries.get(customerId).executeAsOne()
-    val supplier = sample.supplierQueries.insert(Supplier(longIdentifier(10), postal())).executeAsOne()
+    val supplier = sample.supplierQueries.insert(Supplier(longIdentifier(10), postal(), OffsetDateTime.now())).executeAsOne()
 
     // update by single address object not supported, have to provide fields
     sample.addressQueries.update(address_id = address.address_id,
