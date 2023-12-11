@@ -1,5 +1,5 @@
 insert:
-INSERT INTO City (city_name) VALUES (?)
+INSERT INTO City VALUES ?
 RETURNING *;
 
 all:

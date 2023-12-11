@@ -1,0 +1,4 @@
+-- example alter column not null then alter column type
+ALTER TABLE Supplier ALTER COLUMN license_id DROP NOT NULL;
+ALTER TABLE Supplier ALTER COLUMN license_id TYPE BIGINT;
+

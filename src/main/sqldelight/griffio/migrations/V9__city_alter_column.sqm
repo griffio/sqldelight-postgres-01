@@ -1,3 +1,0 @@
--- example of alter column add
-ALTER TABLE Supplier
-  ADD COLUMN last_update TIMESTAMP WITH TIME ZONE NOT NULL;

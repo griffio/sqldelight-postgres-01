@@ -1,0 +1,2 @@
+-- example of alter column set default
+ALTER TABLE Supplier ALTER COLUMN last_update SET DEFAULT now();

@@ -1,0 +1,3 @@
+-- example alter column drop identity - fails as table and column was renamed
+-- ALTER TABLE Supplier ALTER COLUMN supplier_id DROP IDENTITY;
+

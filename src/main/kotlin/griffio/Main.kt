@@ -21,19 +21,19 @@ private fun getSqlDriver(): SqlDriver {
 fun stringIdentifier(n: Int) = (1..n).map { ('A'..'Z').random() }.joinToString("")
 fun longIdentifier(n: Int) = (1..n).map { (1..10).random() }.joinToString("").toLong()
 fun phone() = "${stringIdentifier(3)}-${stringIdentifier(3)}-${stringIdentifier(3)}"
-fun postal() = "${stringIdentifier(6)}"
+fun postal() = stringIdentifier(6)
 
 fun main() {
 
     val driver = getSqlDriver()
     val sample = Sample(driver)
 
-    val city = sample.cityQueries.insert("City Name ${stringIdentifier(10)}").executeAsOne()
+    val city = sample.cityQueries.insert(City(longIdentifier(10), "City Name ${stringIdentifier(10)}")).executeAsOne()
     val addressId = sample.addressQueries.insert("Address ${stringIdentifier(5)}", "Address 2", "District 31", city.city_id, phone(), postal()).executeAsOne()
     val customerId = sample.customerQueries.insert("First Name", "Last Name", "test@example.com", addressId, true).executeAsOne()
     val address: Address = sample.addressQueries.get(addressId).executeAsOne()
     val customer: Customer = sample.customerQueries.get(customerId).executeAsOne()
-    val supplier = sample.supplierQueries.insert(Supplier(longIdentifier(10), postal(), OffsetDateTime.now())).executeAsOne()
+    val supplier = sample.supplierQueries.insert(Supplier(longIdentifier(10), postal(), OffsetDateTime.now(), Long.MAX_VALUE)).executeAsOne()
 
     // update by single address object not supported, have to provide fields
     sample.addressQueries.update(address_id = address.address_id,
