@@ -14,7 +14,7 @@ Some examples of newer postgresql support in sqldelight SNAPSHOT builds 2.1.x
 * rename column - must manually rename column in queries
 * rename table
 * add check constraint
-* drop identity - issue if column was renamed previously
+* drop identity - issue if table and column was previously renamed
 
 To find bugs/issues that need to be fixed/implemented
 
