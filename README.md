@@ -22,6 +22,7 @@ To find bugs/issues that need to be fixed/implemented
 * rename column - error with validation
   * AWAIT MERGE https://github.com/cashapp/sqldelight/pull/4880
 * alter table ... alter column ... drop identity - support but need fixing refers to old column if column was renamed
+  * AWAIT FIX https://github.com/cashapp/sqldelight/pull/4902
 
 *Not supported*
 * alter/drop sequence
@@ -32,6 +33,7 @@ To find bugs/issues that need to be fixed/implemented
 * data class `import` missing in generated queries source when using star `INSERT INTO City (city_name) VALUES (?) RETURNING *;`
   * FIXED https://github.com/cashapp/sqldelight/issues/4448
 * allows unknown columns with alter table ... alter column <unknown name> - must show compiler error `No column found to alter with name <unknown name>`
+  * AWAIT MERGE https://github.com/cashapp/sqldelight/pull/4902
 ----
 
 ```shell
