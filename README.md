@@ -7,7 +7,7 @@ Some examples of newer postgresql support in sqldelight SNAPSHOT builds 2.1.x
 *Migrations performed*
 * create sequence
 * add constraint foreign key
-* set default
+* set default - issue that default column must be populated by insert
 * set not null
 * drop not null
 * drop column
@@ -23,6 +23,8 @@ To find bugs/issues that need to be fixed/implemented
   * AWAIT MERGE https://github.com/cashapp/sqldelight/pull/4880
 * alter table ... alter column ... drop identity - support but need fixing refers to old column if column was renamed
   * AWAIT FIX https://github.com/cashapp/sqldelight/pull/4902
+* alter table ... alter column ... set default - compilation error must be specified in insert statement
+* sqm files must not have post-fix numbers e.g. `V1_create_test_1.sqm` as this breaks the ordering
 
 *Not supported*
 * alter/drop sequence
