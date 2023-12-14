@@ -26,6 +26,7 @@ To find bugs/issues that need to be fixed/implemented
 * alter table ... alter column ... drop identity - support but need fixing refers to old column if column was renamed
   * AWAIT FIX https://github.com/cashapp/sqldelight/pull/4902
 * alter table ... alter column ... set default - compilation error must be specified in insert statement
+  * AWAIT FIX https://github.com/cashapp/sqldelight/pull/4912
 * sqm files must not have post-fix numbers e.g. `V1_create_test_1.sqm` as this breaks the ordering
 
 *Not supported*
