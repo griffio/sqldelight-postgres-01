@@ -6,6 +6,7 @@ https://github.com/cashapp/sqldelight
 
 Some examples of newer postgresql support in sqldelight SNAPSHOT builds 2.1.x
 
+
 *Migrations performed*
 * create sequence
 * add constraint foreign key
@@ -31,8 +32,13 @@ To find bugs/issues that need to be fixed/implemented
 
 *Not supported*
 * alter/drop sequence
+  AWAIT MERGE * https://github.com/cashapp/sqldelight/pull/4920
 * alter table ... add constraint primary key ... (doesn't update data class property to non-nullable type)
 * add constraint check, foreign key `valid` and `not valid` clauses
+* alter column col_name add generated { always | by default } as identity { ( seq_option ) }
+  AWAIT MERGE * https://github.com/cashapp/sqldelight/pull/4916
+* alter column column_name { set generated { always | by default } | set sequence_option | restart [ [ with ] restart ] }
+  AWAIT MERGE * https://github.com/cashapp/sqldelight/pull/4916
 
 *Bugs*
 * data class `import` missing in generated queries source when using star `INSERT INTO City (city_name) VALUES (?) RETURNING *;`
