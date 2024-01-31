@@ -44,8 +44,6 @@ To find bugs/issues that need to be fixed/implemented
   * MERGED https://github.com/cashapp/sqldelight/issues/4448
 * allows unknown columns with alter table ... alter column <unknown name> - must show compiler error `No column found to alter with name <unknown name>`
   * MERGED https://github.com/cashapp/sqldelight/pull/4902
-* functions cannot be used with table column definition DEFAULT clause
-  * MERGED https://github.com/cashapp/sqldelight/pull/4934
 * compiler error when functions are used as DEFAULT column values
   * MERGED https://github.com/cashapp/sqldelight/pull/4934
 ----
