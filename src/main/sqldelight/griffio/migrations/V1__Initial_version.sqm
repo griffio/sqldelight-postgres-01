@@ -22,7 +22,7 @@ CREATE SEQUENCE customer_customer_id_seq AS BIGINT
     CACHE 1;
 
 CREATE TABLE Customer (
-    customer_id BIGINT DEFAULT (nextval('customer_customer_id_seq')) PRIMARY KEY, -- note parens around nextval
+    customer_id BIGINT DEFAULT nextval('customer_customer_id_seq') PRIMARY KEY,
     first_name TEXT NOT NULL,
     last_name TEXT NOT NULL,
     email TEXT,
