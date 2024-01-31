@@ -8,15 +8,17 @@ Some examples of newer postgresql support in sqldelight SNAPSHOT builds 2.1.x
 
 *Migrations performed*
 * create sequence
+* alter sequence
 * add constraint foreign key
-* set default - issue that default column must be populated by insert
+* set default - 
 * set not null
 * drop not null
 * drop column
-* rename column - must manually rename column in queries
+* rename column - 
 * rename table
 * add check constraint
-* drop identity - issue if table and column was previously renamed
+* drop identity 
+* alter identity 
 
 To find bugs/issues that need to be fixed/implemented
 

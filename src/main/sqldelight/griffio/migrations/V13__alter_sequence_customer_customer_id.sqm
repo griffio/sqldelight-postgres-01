@@ -1,0 +1,2 @@
+-- example alter sequence
+ALTER SEQUENCE customer_customer_id_seq INCREMENT 10 CACHE 1;
