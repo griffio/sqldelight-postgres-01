@@ -35,6 +35,7 @@ To find bugs/issues that need to be fixed/implemented
 * alter/drop sequence
   * MERGED https://github.com/cashapp/sqldelight/pull/4920
 * alter table ... add constraint primary key ... (doesn't update data class property to non-nullable type)
+  * AWAITING FIX https://github.com/cashapp/sqldelight/issues/5018
 * add constraint check, foreign key `valid` and `not valid` clauses
 * alter column col_name add generated { always | by default } as identity { ( seq_option ) }
   * MERGED https://github.com/cashapp/sqldelight/pull/4916
