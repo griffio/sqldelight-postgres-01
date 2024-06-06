@@ -41,6 +41,8 @@ To find bugs/issues that need to be fixed/implemented
   * MERGED https://github.com/cashapp/sqldelight/pull/4916
 * alter column column_name { set generated { always | by default } | set sequence_option | restart [ [ with ] restart ] }
   * MERGED https://github.com/cashapp/sqldelight/pull/4916
+* alter table drop constraint [ if exists ] identifier [ restrict | cascade ]
+  * AWAITING FIX https://github.com/cashapp/sqldelight/issues/5288 
 
 *Bugs*
 * data class `import` missing in generated queries source when using star `INSERT INTO City (city_name) VALUES (?) RETURNING *;`
