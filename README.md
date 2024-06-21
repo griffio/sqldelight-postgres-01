@@ -44,7 +44,7 @@ To find bugs/issues that need to be fixed/implemented
 * alter table drop constraint [ if exists ] identifier [ restrict | cascade ]
   * AWAITING MERGE https://github.com/cashapp/sqldelight/issues/5288 
 * alter table add column [ if not exists ]
-  * AWAITING FIX https://github.com/cashapp/sqldelight/issues/5309
+  * AWAITING MERGE https://github.com/cashapp/sqldelight/issues/5309
 
 *Bugs*
 * data class `import` missing in generated queries source when using star `INSERT INTO City (city_name) VALUES (?) RETURNING *;`
