@@ -56,7 +56,7 @@ To find bugs/issues that need to be fixed/implemented
 ----
 
 ```shell
-./gradlew build
+./gradlew build &&
 ./gradlew flywayMigrate
 ```
 

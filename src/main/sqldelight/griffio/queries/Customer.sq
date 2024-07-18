@@ -1,6 +1,6 @@
 insert:
 INSERT INTO Customer (first_name, last_name, email, address_id, is_active) VALUES (?, ?, ?, ?, ?)
-RETURNING address_id;
+RETURNING customer_id;
 
 all:
 SELECT *
