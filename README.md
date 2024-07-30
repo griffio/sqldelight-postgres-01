@@ -2,6 +2,8 @@
 
 see https://github.com/griffio/sqldelight-postgres-02 for Liquibase migrations
 
+see https://github.com/griffio/sqldelight-pg-migration for "simple" migrations
+
 https://github.com/cashapp/sqldelight
 
 Some examples of newer postgresql support in sqldelight SNAPSHOT builds 2.1.x
