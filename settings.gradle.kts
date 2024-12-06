@@ -16,7 +16,7 @@ dependencyResolutionManagement {
     versionCatalogs {
         create("libs") {
             val vSqlDelight = "2.1.0-SNAPSHOT"
-            plugin("kotlin", "org.jetbrains.kotlin.jvm").version("1.9.20")
+            plugin("kotlin", "org.jetbrains.kotlin.jvm").version("2.0.20")
             plugin("sqldelight", "app.cash.sqldelight").version(vSqlDelight)
             plugin("flyway", "org.flywaydb.flyway").version("10.1.0")
             library("sqldelight-jdbc-driver", "app.cash.sqldelight:jdbc-driver:$vSqlDelight")

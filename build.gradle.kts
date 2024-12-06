@@ -16,7 +16,6 @@ repositories {
 
 dependencies {
     implementation(libs.sqldelight.jdbc.driver)
-    api(libs.sqldelight.postgresql.dialect)
     implementation(libs.postgresql.jdbc.driver)
     testImplementation(kotlin("test"))
 }
