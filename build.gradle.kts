@@ -9,7 +9,7 @@ group = "griffio"
 version = "1.0-SNAPSHOT"
 
 repositories {
-    maven(url = "https://oss.sonatype.org/content/repositories/snapshots")
+    maven(url = "https://central.sonatype.com/repository/maven-snapshots/")
     mavenCentral()
     google()
 }

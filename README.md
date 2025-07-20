@@ -1,4 +1,4 @@
-# SqlDelight 2.1.x Postgresql migrations with Flyway 
+# SqlDelight 2.2.x Postgresql migrations with Flyway 
 
 see https://github.com/griffio/sqldelight-postgres-02 for Liquibase migrations
 
@@ -6,7 +6,7 @@ see https://github.com/griffio/sqldelight-pg-migration for "simple" migrations
 
 https://github.com/cashapp/sqldelight
 
-Some examples of newer postgresql support in sqldelight SNAPSHOT builds 2.1.x
+Examples of newer postgresql support in SqlDelight SNAPSHOT build from https://central.sonatype.com/repository/maven-snapshots
 
 *Migrations performed*
 * create sequence
