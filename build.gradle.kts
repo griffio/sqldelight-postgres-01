@@ -45,7 +45,7 @@ flyway {
     url = "jdbc:postgresql://localhost:5432/postgres"
     user = "postgres"
     password = ""
-    locations = arrayOf("${layout.buildDirectory.dir("generated/migrations").get().asFile}")
+    locations = arrayOf("filesystem:${layout.buildDirectory.dir("generated/migrations").get().asFile}")
     baselineOnMigrate = true
     baselineVersion = "0"
 }
