@@ -1,0 +1,2 @@
+-- example alter index
+ALTER INDEX IF EXISTS something_idx RENAME TO something_else_idx;
