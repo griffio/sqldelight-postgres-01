@@ -24,7 +24,7 @@ sqldelight {
     databases {
         create("Sample") {
             deriveSchemaFromMigrations.set(true)
-            migrationOutputDirectory = file("$buildDir/generated/migrations")
+            migrationOutputDirectory = layout.buildDirectory.dir("generated/migrations").get().asFile
             migrationOutputFileFormat = ".sql" // Defaults to .sql
             packageName.set("griffio.queries")
             dialect(libs.sqldelight.postgresql.dialect)
@@ -45,18 +45,17 @@ flyway {
     url = "jdbc:postgresql://localhost:5432/postgres"
     user = "postgres"
     password = ""
-    locations = arrayOf("filesystem:$buildDir/generated/migrations")
+    locations = arrayOf("${layout.buildDirectory.dir("generated/migrations").get().asFile}")
     baselineOnMigrate = true
     baselineVersion = "0"
 }
-
 
 tasks.test {
     useJUnitPlatform()
 }
 
 kotlin {
-    jvmToolchain(17)
+    jvmToolchain(21)
 }
 
 application {
