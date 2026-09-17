@@ -37,5 +37,7 @@ To find bugs/issues that need to be fixed/implemented
 ./gradlew flywayMigrate
 ```
 
+The sample app connects to `jdbc:postgresql://localhost:5432/postgres`.
+
 Flyway db migrations
 https://documentation.red-gate.com/fd/gradle-task-184127407.html
